@@ -96,8 +96,13 @@ class FMatchController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FMatch $fMatch)
+    public function destroy($fMatch)
     {
         //
+        $match = FMatch::find($fMatch);
+        if($match->delete())
+            return response()->json(['message' => "Team deleted successfully"]);
+        else
+            return response()->json(['message' => "Couldn't delete team"], 500);
     }
 }
