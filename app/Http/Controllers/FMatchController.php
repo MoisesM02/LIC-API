@@ -101,8 +101,8 @@ class FMatchController extends Controller
         //
         $match = FMatch::find($fMatch);
         if($match->delete())
-            return response()->json(['message' => "Team deleted successfully"]);
+            return response()->json(['message' => "Match deleted successfully"]);
         else
-            return response()->json(['message' => "Couldn't delete team"], 500);
+            return response()->json(['message' => "Couldn't delete match"], 500);
     }
 }
