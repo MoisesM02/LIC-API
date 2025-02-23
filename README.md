@@ -21,10 +21,10 @@ cd LIC-API
 3. **Ejecutar el siguiente comando de Docker**
     docker run --rm \
     -u "$(id -u):$(id -g)" \
-    -v $(pwd):/var/www/html \
+    -v "$(pwd):/var/www/html" \
     -w /var/www/html \
-    laravelsail/php82-composer:latest \
-    composer install
+    laravelsail/php84-composer:latest \
+    composer install --ignore-platform-reqs
 
    4. **Crear una copia del archivo .env**
       cp .env.example .env
